@@ -1,0 +1,50 @@
+import { motion } from 'motion/react';
+import { MapPin, Phone, Mail } from 'lucide-react';
+
+export default function Contact() {
+  return (
+    <main className="w-full pt-32 pb-20 min-h-screen">
+      <section className="py-20 px-6 bg-[#FDFCFB]">
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <p className="text-[11px] uppercase tracking-[0.4em] font-bold text-stone-400 mb-4">Get In Touch</p>
+          <h1 className="font-serif text-5xl md:text-7xl text-stone-900 leading-[0.95] tracking-tight mb-8">
+            Contact Us
+          </h1>
+          <p className="text-stone-500 text-sm max-w-xl mx-auto leading-relaxed">
+            We'd love to hear from you. Reach out with any questions about our programs, enrollment, or just to say hello.
+          </p>
+        </div>
+        
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex flex-col items-center p-12 bg-white rounded-[2rem] border border-stone-200/50 shadow-sm text-center transform hover:-translate-y-1 transition-transform duration-300">
+            <div className="w-16 h-16 rounded-full bg-stone-100 flex items-center justify-center mb-6 text-stone-600">
+              <MapPin size={28} />
+            </div>
+            <h3 className="font-serif text-2xl text-stone-900 mb-4">Locations</h3>
+            <p className="text-sm text-stone-500 mb-2">123 Placeholder Street<br/>Suite 100</p>
+            <div className="w-8 h-px bg-stone-200 my-4 mx-auto"></div>
+            <p className="text-sm text-stone-500">456 Placeholder Avenue<br/>Building B</p>
+          </div>
+          
+          <div className="flex flex-col items-center p-12 bg-white rounded-[2rem] border border-stone-200/50 shadow-sm text-center transform hover:-translate-y-1 transition-transform duration-300">
+            <div className="w-16 h-16 rounded-full bg-stone-100 flex items-center justify-center mb-6 text-stone-600">
+              <Phone size={28} />
+            </div>
+            <h3 className="font-serif text-2xl text-stone-900 mb-4">Phone</h3>
+            <p className="text-sm text-stone-500 mb-2">[Placeholder Phone Number]</p>
+            <p className="text-xs text-stone-400 mt-2">Mon-Fri, 9am - 5pm</p>
+          </div>
+
+          <div className="flex flex-col items-center p-12 bg-white rounded-[2rem] border border-stone-200/50 shadow-sm text-center transform hover:-translate-y-1 transition-transform duration-300">
+            <div className="w-16 h-16 rounded-full bg-stone-100 flex items-center justify-center mb-6 text-stone-600">
+              <Mail size={28} />
+            </div>
+            <h3 className="font-serif text-2xl text-stone-900 mb-4">Email</h3>
+            <p className="text-sm text-stone-500 mb-2">[Placeholder Email Address]</p>
+            <p className="text-xs text-stone-400 mt-2">We try to reply within 24 hours.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
