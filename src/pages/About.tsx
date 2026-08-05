@@ -46,21 +46,21 @@ export default function About() {
           className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16"
         >
           <div>
-            <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-stone-400 mb-6 block">Our Objective</span>
+            <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-stone-400 mb-6 block">Our Vision</span>
             <p className="font-serif text-2xl text-stone-800 leading-snug">
-              To establish and maintain a cultural enrichment and performing arts school in Chicago and surrounding Suburbs; to finance, direct and produce productions that will enhance, strengthen and support the children of communities served.
+              To create an inspiring space where creativity, movement, and artistic expression can thrive. We aim to build a welcoming community that encourages individuals of all ages to grow in confidence, discipline, and passion through the performing arts.
             </p>
           </div>
           <div>
             <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-stone-400 mb-6 block">Our Mission</span>
             <p className="font-serif text-2xl text-stone-800 leading-snug mb-6">
-              To create and develop new and enriching productions; and to offer children an understanding of the value of their existence by using fine arts to provide a cultural education.
+              To inspire creativity through movement, performance, and artistic education while fostering confidence, discipline, and meaningful community connections.
             </p>
-            <p className="text-sm text-stone-500 mb-4">In fulfilling our mission we seek to enrich the world community through the following program areas:</p>
+            <p className="text-sm text-stone-500 mb-4">Our Focus</p>
             <ul className="space-y-2 text-sm text-stone-600 font-medium">
-              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-stone-400"></span> The Arts</li>
-              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-stone-400"></span> Service to Youth</li>
-              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-stone-400"></span> Service to Community</li>
+              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-stone-400"></span> Performing Arts </li>
+              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-stone-400"></span> Dance & Movement Education</li>
+              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-stone-400"></span> Community Engagement</li>
             </ul>
           </div>
         </motion.div>

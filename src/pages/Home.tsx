@@ -146,8 +146,8 @@ export default function Home() {
              <div className="flex flex-col items-center p-6 bg-white/50 backdrop-blur rounded-3xl border border-stone-200/50">
                 <MapPin className="mb-3 text-stone-400" size={24} />
                 <span className="font-bold text-stone-800 uppercase tracking-widest text-[10px] mb-2">2 New Locations</span>
-                <span className="text-center">20642 Matteson - inside Matteson Community Center</span>
-                <span className="text-center mt-1">4450 Oakwood Ave - inside Oakwood Rec Center</span>
+                <span className="text-center">128 Sakura Street - Central Plaza</span>
+                <span className="text-center mt-1">45 Maple Avenue - Riverside Commercial Center</span>
              </div>
              <div className="flex flex-col items-center p-6 bg-white/50 backdrop-blur rounded-3xl border border-stone-200/50">
                 <CalendarIcon className="mb-3 text-stone-400" size={24} />
