@@ -26,7 +26,7 @@ export default function Footer() {
               className="inline-flex items-center gap-3 mb-4 group transform hover:-translate-y-1 transition-all duration-300"
             >
                <img 
-                 src="/favicon.jpg" 
+                 src="/logo.jpg" 
                  alt="Sora Logo" 
                  className="w-8 h-8 flex-shrink-0 object-cover rounded-full shadow-sm group-hover:scale-105 transition-transform duration-300" 
                />

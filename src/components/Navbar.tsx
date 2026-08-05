@@ -45,7 +45,7 @@ export default function Navbar() {
           >
             <div className="flex items-center gap-3">
                <img 
-                 src="/favicon.jpg" 
+                 src="/logo.jpg" 
                  alt="Sora Logo" 
                  className="w-10 h-10 md:w-12 md:h-12 flex-shrink-0 object-cover rounded-full shadow-md group-hover:scale-105 transition-transform duration-300" 
                />

@@ -5,25 +5,48 @@ import { Link } from 'react-router-dom';
 
 const heroImages = [
   {
-    src: "https://placehold.co/800x600/e2e8f0/64748b?text=Placeholder+1",
+    src: "/assets/hero-1.webp",
     alt: "Placeholder 1",
     category: "Design",
     title: "Simple by Nature",
   },
   {
-    src: "https://placehold.co/800x600/e2e8f0/64748b?text=Placeholder+2",
+    src: "/assets/hero-2.webp",
     alt: "Placeholder 2",
     category: "Experience",
     title: "Modern by Design",
   },
   {
-    src: "https://placehold.co/800x600/e2e8f0/64748b?text=Placeholder+3",
+    src: "/assets/hero-3.webp",
     alt: "Placeholder 3",
     category: "Craft",
     title: "Thoughtfully Crafted",
   },
 ];
 
+const featuredPrograms = [
+  {
+    id: 'service-1',
+    title: 'Service One',
+    description: 'A placeholder description for your first primary service or feature.',
+    image: '/assets/hero-1.webp', // Add image path (e.g., "/logo.jpg" or "https://...") or image URL here
+    link: '/programs',
+  },
+  {
+    id: 'service-2',
+    title: 'Service Two',
+    description: 'A placeholder description for your second primary service or feature.',
+    image: '/assets/hero-2.webp', // Add image path here
+    link: '/programs',
+  },
+  {
+    id: 'service-3',
+    title: 'Service Three',
+    description: 'A placeholder description for your third primary service or feature.',
+    image: '/assets/hero-3.webp', // Add image path here
+    link: '/programs',
+  },
+];
 
 export default function Home() {
   const [heroIndex, setHeroIndex] = useState(0);
@@ -171,22 +194,22 @@ export default function Home() {
             <h2 className="font-serif text-4xl md:text-5xl text-stone-900 mb-4">Featured Programs</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Placeholder for Featured Program Cards */}
-            <div className="p-8 rounded-3xl bg-stone-50 border border-stone-100 flex flex-col items-start group">
-              <div className="w-12 h-12 rounded-full bg-stone-200 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform"></div>
-              <h3 className="font-serif text-2xl mb-3">Service One</h3><p className="text-sm text-stone-500 mb-6">A placeholder description for your first primary service or feature.</p>
-              <Link to="/programs" className="text-xs font-bold uppercase tracking-widest text-[#9E2A5E] mt-auto flex items-center gap-1 group-hover:gap-2 transition-all">View Program <ChevronRight size={14} /></Link>
-            </div>
-            <div className="p-8 rounded-3xl bg-stone-50 border border-stone-100 flex flex-col items-start group">
-              <div className="w-12 h-12 rounded-full bg-stone-200 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform"></div>
-              <h3 className="font-serif text-2xl mb-3">Service Two</h3><p className="text-sm text-stone-500 mb-6">A placeholder description for your second primary service or feature.</p>
-              <Link to="/programs" className="text-xs font-bold uppercase tracking-widest text-[#9E2A5E] mt-auto flex items-center gap-1 group-hover:gap-2 transition-all">View Program <ChevronRight size={14} /></Link>
-            </div>
-            <div className="p-8 rounded-3xl bg-stone-50 border border-stone-100 flex flex-col items-start group">
-              <div className="w-12 h-12 rounded-full bg-stone-200 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform"></div>
-              <h3 className="font-serif text-2xl mb-3">Service Three</h3><p className="text-sm text-stone-500 mb-6">A placeholder description for your third primary service or feature.</p>
-              <Link to="/programs" className="text-xs font-bold uppercase tracking-widest text-[#9E2A5E] mt-auto flex items-center gap-1 group-hover:gap-2 transition-all">View Program <ChevronRight size={14} /></Link>
-            </div>
+            {featuredPrograms.map((program) => (
+              <div key={program.id} className="p-8 rounded-3xl bg-stone-50 border border-stone-100 flex flex-col items-start group">
+                <div className="w-14 h-14 rounded-2xl bg-stone-100 border border-stone-200 mb-6 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform">
+                  {program.image ? (
+                    <img src={program.image} alt={program.title} className="w-full h-full object-cover" />
+                  ) : (
+                    <div className="w-6 h-6 rounded-full bg-stone-300/80" />
+                  )}
+                </div>
+                <h3 className="font-serif text-2xl mb-3">{program.title}</h3>
+                <p className="text-sm text-stone-500 mb-6">{program.description}</p>
+                <Link to={program.link} className="text-xs font-bold uppercase tracking-widest text-[#9E2A5E] mt-auto flex items-center gap-1 group-hover:gap-2 transition-all">
+                  View Program <ChevronRight size={14} />
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>
