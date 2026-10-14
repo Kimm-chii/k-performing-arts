@@ -4,7 +4,7 @@ import { studio } from '../data/studio';
 
 export default function Contact() {
   return (
-    <main className="w-full pt-32 pb-20 min-h-screen">
+    <main className="w-full pt-32 pb-20 min-h-[calc(var(--sh,1vh)*100)]">
       <section className="py-20 px-6 bg-[#FDFCFB]">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <p className="text-[11px] uppercase tracking-[0.4em] font-bold text-stone-400 mb-4">Get In Touch</p>

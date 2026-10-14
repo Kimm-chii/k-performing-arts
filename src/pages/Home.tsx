@@ -42,7 +42,7 @@ export default function Home() {
   return (
     <main className="w-full">
       {/* HERO SECTION */}
-      <section className="relative min-h-[90vh] flex flex-col justify-center items-center px-6 pt-32 pb-20 overflow-hidden bg-[#FDFCFB]">
+      <section className="relative min-h-[calc(var(--sh,1vh)*90)] flex flex-col justify-center items-center px-6 pt-32 pb-20 overflow-hidden bg-[#FDFCFB]">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
           <div className="absolute top-[-10%] right-[-5%] w-[400px] h-[400px] bg-stone-200/20 rounded-full blur-[100px] pointer-events-none"></div>
           <div className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-stone-100/40 rounded-full blur-[100px] pointer-events-none"></div>

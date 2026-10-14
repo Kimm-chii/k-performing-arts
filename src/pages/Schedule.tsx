@@ -13,7 +13,7 @@ export default function Schedule() {
     .filter((d) => d.slots.length > 0);
 
   return (
-    <main className="w-full pt-32 pb-20 bg-[#FDFCFB] min-h-screen">
+    <main className="w-full pt-32 pb-20 bg-[#FDFCFB] min-h-[calc(var(--sh,1vh)*100)]">
       <section className="px-6 py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

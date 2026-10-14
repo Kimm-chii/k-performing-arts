@@ -30,7 +30,7 @@ function AnimatedRoutes() {
 export default function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col bg-[#FAFAFA] text-[#1A1A1A] font-sans selection:bg-[#9E2A5E]/20 overflow-x-hidden">
+      <div className="min-h-[calc(var(--sh,1vh)*100)] flex flex-col bg-[#FAFAFA] text-[#1A1A1A] font-sans selection:bg-[#9E2A5E]/20 overflow-x-hidden">
         <Navbar />
         <main className="flex-grow">
           <AnimatedRoutes />
