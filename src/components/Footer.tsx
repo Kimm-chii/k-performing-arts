@@ -1,4 +1,5 @@
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { studio } from '../data/studio';
 
 export default function Footer() {
   const location = useLocation();
@@ -37,7 +38,7 @@ export default function Footer() {
                </div>
             </a>
             <p className="text-stone-500 text-xs max-w-sm leading-relaxed mb-4">
-              Thoughtfully crafted experiences designed around simplicity, purpose, and connection. Every detail is created with intention to deliver a refined and memorable experience.
+              Dance, acting, modeling and etiquette classes for kids, teens and adults. Small groups, ten-week terms, and a showcase at the end of each one.
             </p>
           </div>
 
@@ -53,43 +54,25 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="text-[9px] uppercase tracking-widest font-bold text-stone-400 mb-4">Connect</p>
-            <ul className="space-y-2 text-stone-600">
-              <li>
-                <a href="#" className="text-xs hover:text-stone-900 transition-colors flex items-center gap-1 group">
-                  [Website Link] <span className="opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-1 transition-all">↗</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-xs hover:text-stone-900 transition-colors flex items-center gap-1 group">
-                  [Instagram] <span className="opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-1 transition-all">↗</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-xs hover:text-stone-900 transition-colors flex items-center gap-1 group">
-                  [Facebook] <span className="opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-1 transition-all">↗</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-xs hover:text-stone-900 transition-colors flex items-center gap-1 group">
-                  [YouTube] <span className="opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-1 transition-all">↗</span>
-                </a>
-              </li>
+            <p className="text-[9px] uppercase tracking-widest font-bold text-stone-400 mb-4">Studios</p>
+            <ul className="space-y-3 text-stone-600">
+              {studio.locations.map((loc) => (
+                <li key={loc.name} className="text-xs leading-relaxed">
+                  <span className="block text-stone-800 font-medium">{loc.name}</span>
+                  {loc.address}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
         <div className="border-t border-stone-200/50 pt-6 flex flex-col md:flex-row items-center justify-between text-[10px] text-stone-500 gap-4">
-          <div className="flex gap-4">
-             <Link to="#" className="hover:text-stone-900 transition-colors">[Privacy Policy]</Link>
-             <Link to="#" className="hover:text-stone-900 transition-colors">[Terms of Service]</Link>
-          </div>
           <p className="text-center md:text-left text-stone-400 max-w-xl text-[9px] leading-relaxed">
-            This website is an unofficial design concept created for demonstration purposes. All trademarks, logos, and business information belong to their respective owners.
+            Sora Performing Arts is a fictional studio. This site is a design concept, and all names, addresses and contact details are examples.
           </p>
           <div className="text-center md:text-right flex-shrink-0">
              <p className="font-bold text-stone-400 uppercase tracking-widest mb-0.5">Sora</p>
-             <p>[Year] © All Rights Reserved</p>
+             <p>© 2026 All rights reserved</p>
           </div>
         </div>
       </div>

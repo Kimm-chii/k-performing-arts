@@ -17,18 +17,18 @@ export default function About() {
             <div>
               <div className="space-y-6 text-stone-500 text-sm leading-relaxed">
                 <p>
-                  Sora is dedicated to thoughtfully crafted experiences designed around simplicity, purpose, and connection. Every detail is created with intention to deliver a refined and memorable experience. We focus on modern design principles to provide an elegant aesthetic and seamless functionality.
+                  Sora started as one room and a borrowed sound system: a place where kids could dance after school without feeling judged. Today it is two studios, four programs and a showcase at the end of every term.
                 </p>
                 <p>
-                  Our journey began with a simple idea: to bring beauty and simplicity into everyday experiences. Over the years, we have refined our approach, partnering with forward-thinking creators and visionaries to establish a standard of excellence and modern design.
+                  Classes stay small on purpose. Teachers learn every student's name, levels are flexible, and nobody has to be "good" before they start. We care more about confidence than perfection.
                 </p>
               </div>
             </div>
             <div className="relative h-[500px] rounded-[48px] overflow-hidden group border border-stone-200/50 shadow-inner">
                <div className="absolute inset-0 bg-stone-100"></div>
                <img 
-                 src="https://images.unsplash.com/photo-1518834107812-67b0b7c58434?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                 alt="Performance" 
+                 src="/assets/hero-3.webp" 
+                 alt="A ballet dancer reaching up into a beam of light" 
                  className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                />
             </div>
@@ -68,14 +68,14 @@ export default function About() {
 
       {/* HERITAGE SHOWCASE */}
       <ImageShowcase 
-        subtitle="Our Heritage"
+        subtitle="Studio Life"
         sectionTitle="Sora in Action"
-        description="Over four decades of artistic excellence, performances, and student development."
+        description="Rehearsals, classes and the showcase that closes every term."
         columns={3}
         images={[
-          { src: "https://placehold.co/800x600/e2e8f0/64748b?text=Placeholder+1", alt: "Historic Performance", title: "Cultural Enrichment", category: "History" },
-          { src: "https://placehold.co/800x600/e2e8f0/64748b?text=Placeholder+2", alt: "Oprah Show Appearance", title: "National Recognition", category: "Milestones" },
-          { src: "https://placehold.co/800x600/e2e8f0/64748b?text=Placeholder+3", alt: "Disney Performance", title: "Disney Award Showcase", category: "Awards" },
+          { src: "/assets/hero-1.webp", alt: "A dancer in a long skirt turning under warm stage lights", title: "Contemporary Rehearsal", category: "Dance" },
+          { src: "/assets/hero-2.webp", alt: "A full concert hall with blue stage lights and a crowd", title: "End of Term Showcase", category: "Performance" },
+          { src: "/assets/hero-3.webp", alt: "A ballet dancer reaching up into a beam of light", title: "Ballet Foundations", category: "Dance" },
         ]}
       />
     </main>

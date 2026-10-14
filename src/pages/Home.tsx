@@ -1,50 +1,29 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { MapPin, Calendar as CalendarIcon, Info, Star, ChevronRight } from 'lucide-react';
+import { MapPin, Calendar as CalendarIcon, Info, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { studio, programs, schedule, firstSteps } from '../data/studio';
+
+const classesPerWeek = schedule.reduce((n, d) => n + d.slots.length, 0);
 
 const heroImages = [
   {
     src: "/assets/hero-1.webp",
-    alt: "Placeholder 1",
-    category: "Design",
-    title: "Simple by Nature",
+    alt: "A dancer in a long skirt turning under warm stage lights",
+    category: "Dance",
+    title: "Contemporary Program",
   },
   {
     src: "/assets/hero-2.webp",
-    alt: "Placeholder 2",
-    category: "Experience",
-    title: "Modern by Design",
+    alt: "A full concert hall with blue stage lights and a crowd",
+    category: "Performance",
+    title: "End of Term Showcase",
   },
   {
     src: "/assets/hero-3.webp",
-    alt: "Placeholder 3",
-    category: "Craft",
-    title: "Thoughtfully Crafted",
-  },
-];
-
-const featuredPrograms = [
-  {
-    id: 'service-1',
-    title: 'Service One',
-    description: 'A placeholder description for your first primary service or feature.',
-    image: '/assets/hero-1.webp', // Add image path (e.g., "/logo.jpg" or "https://...") or image URL here
-    link: '/programs',
-  },
-  {
-    id: 'service-2',
-    title: 'Service Two',
-    description: 'A placeholder description for your second primary service or feature.',
-    image: '/assets/hero-2.webp', // Add image path here
-    link: '/programs',
-  },
-  {
-    id: 'service-3',
-    title: 'Service Three',
-    description: 'A placeholder description for your third primary service or feature.',
-    image: '/assets/hero-3.webp', // Add image path here
-    link: '/programs',
+    alt: "A ballet dancer reaching up into a beam of light",
+    category: "Dance",
+    title: "Ballet Foundations",
   },
 ];
 
@@ -78,12 +57,12 @@ export default function Home() {
           {/* Main Hero Header + Image Card Row */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-12 text-left">
             <div className="lg:col-span-7">
-              <p className="text-[11px] uppercase tracking-[0.4em] font-bold text-stone-400 mb-4">Welcome to Sora</p>
+              <p className="text-[11px] uppercase tracking-[0.4em] font-bold text-stone-400 mb-4">Sora Performing Arts</p>
               <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl text-stone-900 leading-[0.98] tracking-tight mb-6">
-                Simple by Nature. <br className="hidden sm:block"/> <span className="italic font-light text-stone-400">Modern by Design.</span>
+                Move, speak, perform. <br className="hidden sm:block"/> <span className="italic font-light text-stone-400">At your own pace.</span>
               </h1>
               <p className="text-stone-500 text-base leading-relaxed max-w-xl">
-                Thoughtfully crafted experiences designed around simplicity, purpose, and connection. Every detail is created with intention to deliver a refined and memorable experience.
+                A performing arts studio for kids, teens and adults. Small classes in dance, acting, modeling and etiquette, across two studios in the city.
               </p>
             </div>
 
@@ -145,106 +124,82 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 text-stone-600 text-sm">
              <div className="flex flex-col items-center p-6 bg-white/50 backdrop-blur rounded-3xl border border-stone-200/50">
                 <MapPin className="mb-3 text-stone-400" size={24} />
-                <span className="font-bold text-stone-800 uppercase tracking-widest text-[10px] mb-2">2 New Locations</span>
-                <span className="text-center">128 Sakura Street - Central Plaza</span>
-                <span className="text-center mt-1">45 Maple Avenue - Riverside Commercial Center</span>
+                <span className="font-bold text-stone-800 uppercase tracking-widest text-[10px] mb-2">Two Studios</span>
+                {studio.locations.map((loc) => (
+                  <span key={loc.name} className="text-center mt-1 first-of-type:mt-0">{loc.address}</span>
+                ))}
              </div>
              <div className="flex flex-col items-center p-6 bg-white/50 backdrop-blur rounded-3xl border border-stone-200/50">
                 <CalendarIcon className="mb-3 text-stone-400" size={24} />
-                <span className="font-bold text-stone-800 uppercase tracking-widest text-[10px] mb-2">2026-2027 Season</span>
-                <span className="text-center">Begins September 12th</span>
-                <span className="text-center mt-1 font-medium text-stone-900">25 Classes Per Week</span>
+                <span className="font-bold text-stone-800 uppercase tracking-widest text-[10px] mb-2">{studio.season}</span>
+                <span className="text-center">{studio.seasonStart}</span>
+                <span className="text-center mt-1 font-medium text-stone-900">{classesPerWeek} classes a week, six days</span>
              </div>
              <div className="flex flex-col items-center p-6 bg-white/50 backdrop-blur rounded-3xl border border-stone-200/50">
                 <Info className="mb-3 text-stone-400" size={24} />
                 <span className="font-bold text-stone-800 uppercase tracking-widest text-[10px] mb-2">Enrollment</span>
-                <span className="text-center">Open Enrollment</span>
-                <span className="text-center mt-1 font-medium text-stone-900">Join Anytime</span>
+                <span className="text-center">Open all season</span>
+                <span className="text-center mt-1 font-medium text-stone-900">First class is free</span>
              </div>
           </div>
 
-          <div className="text-sm text-stone-500 max-w-3xl mx-auto leading-relaxed mb-12 space-y-6 text-left md:text-center">
-            <p>
-              Thoughtfully crafted experiences designed around simplicity, purpose, and connection. Every detail is created with intention to deliver a refined and memorable experience.
-            </p>
-            <p>
-              We believe that simplicity is the ultimate sophistication. Our approach focuses on delivering seamless and modern designs that resonate with your audience.
-            </p>
-            <p>
-              Explore our curated collections and discover a world where every detail is created with intention. Join us on a journey to redefine modern experiences.
-            </p>
-          </div>
-          
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link 
               to="/programs" 
               className="px-8 py-4 border border-stone-200 rounded-full text-[11px] font-bold uppercase tracking-widest hover:bg-stone-900 hover:text-white transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg w-full sm:w-auto text-stone-900 text-center"
             >
-              Click on class to view location
+              View Programs
             </Link>
           </div>
         </motion.div>
       </section>
 
-      {/* FEATURED PROGRAMS */}
-      <section className="py-32 px-6 bg-white">
+      {/* PROGRAMS */}
+      <section className="py-24 md:py-32 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-[11px] uppercase tracking-[0.4em] font-bold text-stone-400 mb-4">Discover</p>
-            <h2 className="font-serif text-4xl md:text-5xl text-stone-900 mb-4">Featured Programs</h2>
+            <p className="text-[11px] uppercase tracking-[0.4em] font-bold text-stone-400 mb-4">Programs</p>
+            <h2 className="font-serif text-4xl md:text-5xl text-stone-900 mb-4">Four ways to find your stage</h2>
+            <p className="text-stone-500 text-base max-w-xl mx-auto leading-relaxed">Every program runs in ten-week terms, with levels from first class to advanced.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featuredPrograms.map((program) => (
-              <div key={program.id} className="p-8 rounded-3xl bg-stone-50 border border-stone-100 flex flex-col items-start group">
-                <div className="w-14 h-14 rounded-2xl bg-stone-100 border border-stone-200 mb-6 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform">
-                  {program.image ? (
-                    <img src={program.image} alt={program.title} className="w-full h-full object-cover" />
-                  ) : (
-                    <div className="w-6 h-6 rounded-full bg-stone-300/80" />
-                  )}
-                </div>
-                <h3 className="font-serif text-2xl mb-3">{program.title}</h3>
-                <p className="text-sm text-stone-500 mb-6">{program.description}</p>
-                <Link to={program.link} className="text-xs font-bold uppercase tracking-widest text-[#9E2A5E] mt-auto flex items-center gap-1 group-hover:gap-2 transition-all">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-stone-200 border border-stone-200 rounded-2xl overflow-hidden">
+            {programs.map((program, i) => (
+              <Link
+                key={program.id}
+                to={`/programs#${program.id}`}
+                className="bg-stone-50 hover:bg-white p-8 flex flex-col items-start group transition-colors"
+              >
+                <span className="text-[11px] font-bold tracking-[0.3em] text-[#9E2A5E] mb-6">{String(i + 1).padStart(2, '0')}</span>
+                <h3 className="font-serif text-2xl mb-1">{program.title}</h3>
+                <p className="text-[11px] uppercase tracking-widest text-stone-400 mb-4">{program.ages}</p>
+                <p className="text-sm text-stone-500 leading-relaxed mb-6">{program.summary}</p>
+                <span className="text-xs font-bold uppercase tracking-widest text-[#9E2A5E] mt-auto flex items-center gap-1 group-hover:gap-2 transition-all">
                   View Program <ChevronRight size={14} />
-                </Link>
-              </div>
+                </span>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      
-
-      {/* TESTIMONIALS */}
-      <section className="py-32 px-6 bg-white border-t border-stone-100">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-[11px] uppercase tracking-[0.4em] font-bold text-stone-400 mb-4">Voices</p>
-          <h2 className="font-serif text-4xl md:text-5xl text-stone-900 mb-16">What People Say</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-            <div className="p-8 bg-stone-50 rounded-[2rem]">
-              <div className="flex gap-1 text-[#E22D6E] mb-4">
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-              </div>
-              <p className="text-sm text-stone-600 italic mb-6">"Sora has been a second home for my daughter. The instructors are phenomenal and truly care about the students' growth."</p>
-              <p className="text-xs font-bold uppercase tracking-widest text-stone-900">- Client Placeholder</p>
-            </div>
-            <div className="p-8 bg-stone-50 rounded-[2rem]">
-              <div className="flex gap-1 text-[#E22D6E] mb-4">
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-                <Star size={16} fill="currentColor" />
-              </div>
-              <p className="text-sm text-stone-600 italic mb-6">"An incredible community. Their dedication to simplicity and purpose is evident in every interaction we have had."</p>
-              <p className="text-xs font-bold uppercase tracking-widest text-stone-900">- Partner Placeholder</p>
-            </div>
+      {/* FIRST CLASS */}
+      <section className="py-24 md:py-32 px-6 bg-[#FDFCFB] border-t border-stone-100">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="lg:col-span-4">
+            <p className="text-[11px] uppercase tracking-[0.4em] font-bold text-stone-400 mb-4">New Here</p>
+            <h2 className="font-serif text-4xl md:text-5xl text-stone-900 leading-tight">Your first class</h2>
           </div>
+          <ol className="lg:col-span-8 border-t border-stone-200">
+            {firstSteps.map((step, i) => (
+              <li key={step.title} className="grid grid-cols-[3rem_1fr] gap-4 py-6 border-b border-stone-200">
+                <span className="font-serif text-2xl text-[#9E2A5E]">{i + 1}</span>
+                <div>
+                  <h3 className="font-serif text-xl text-stone-900 mb-1">{step.title}</h3>
+                  <p className="text-sm text-stone-500 leading-relaxed">{step.text}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -252,11 +207,11 @@ export default function Home() {
       <section className="py-32 px-6 bg-[#9E2A5E] text-white text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl mb-6 text-white">Ready to take the stage?</h2>
-          <p className="text-white/80 text-sm mb-10 max-w-xl mx-auto">Join our community and discover your potential. Enrollment is open year-round.</p>
+          <p className="text-white/80 text-base mb-10 max-w-xl mx-auto">Book a free trial class in any program. We will help you find the right level.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             
             <Link to="/contact" className="px-8 py-4 bg-transparent border border-white/30 text-white rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white/10 transition-colors">
-              Inquire
+              Book a Trial Class
             </Link>
           </div>
         </div>

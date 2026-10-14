@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { MapPin, Phone, Mail } from 'lucide-react';
+import { studio } from '../data/studio';
 
 export default function Contact() {
   return (
@@ -11,7 +12,7 @@ export default function Contact() {
             Contact Us
           </h1>
           <p className="text-stone-500 text-sm max-w-xl mx-auto leading-relaxed">
-            We'd love to hear from you. Reach out with any questions about our programs, enrollment, or just to say hello.
+            Questions about programs, levels or a free trial class? Get in touch and we will help you find the right fit.
           </p>
         </div>
         
@@ -21,9 +22,13 @@ export default function Contact() {
               <MapPin size={28} />
             </div>
             <h3 className="font-serif text-2xl text-stone-900 mb-4">Locations</h3>
-            <p className="text-sm text-stone-500 mb-2">123 Placeholder Street<br/>Suite 100</p>
-            <div className="w-8 h-px bg-stone-200 my-4 mx-auto"></div>
-            <p className="text-sm text-stone-500">456 Placeholder Avenue<br/>Building B</p>
+            {studio.locations.map((loc, i) => (
+              <div key={loc.name}>
+                {i > 0 && <div className="w-8 h-px bg-stone-200 my-4 mx-auto"></div>}
+                <p className="text-sm font-medium text-stone-800">{loc.name}</p>
+                <p className="text-sm text-stone-500">{loc.address}</p>
+              </div>
+            ))}
           </div>
           
           <div className="flex flex-col items-center p-12 bg-white rounded-[2rem] border border-stone-200/50 shadow-sm text-center transform hover:-translate-y-1 transition-transform duration-300">
@@ -31,8 +36,8 @@ export default function Contact() {
               <Phone size={28} />
             </div>
             <h3 className="font-serif text-2xl text-stone-900 mb-4">Phone</h3>
-            <p className="text-sm text-stone-500 mb-2">[Placeholder Phone Number]</p>
-            <p className="text-xs text-stone-400 mt-2">Mon-Fri, 9am - 5pm</p>
+            <p className="text-sm text-stone-500 mb-2">{studio.phone}</p>
+            <p className="text-xs text-stone-400 mt-2">{studio.officeHours}</p>
           </div>
 
           <div className="flex flex-col items-center p-12 bg-white rounded-[2rem] border border-stone-200/50 shadow-sm text-center transform hover:-translate-y-1 transition-transform duration-300">
@@ -40,10 +45,13 @@ export default function Contact() {
               <Mail size={28} />
             </div>
             <h3 className="font-serif text-2xl text-stone-900 mb-4">Email</h3>
-            <p className="text-sm text-stone-500 mb-2">[Placeholder Email Address]</p>
+            <p className="text-sm text-stone-500 mb-2 break-all">{studio.email}</p>
             <p className="text-xs text-stone-400 mt-2">We try to reply within 24 hours.</p>
           </div>
         </div>
+        <p className="max-w-6xl mx-auto mt-10 text-center text-xs text-stone-400">
+          Sora Performing Arts is a fictional studio. The address, phone number and email on this page are examples.
+        </p>
       </section>
     </main>
   );

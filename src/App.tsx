@@ -6,7 +6,8 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import PlaceholderPage from './pages/PlaceholderPage';
+import Programs from './pages/Programs';
+import Schedule from './pages/Schedule';
 import PageTransition from './components/PageTransition';
 
 function AnimatedRoutes() {
@@ -18,8 +19,8 @@ function AnimatedRoutes() {
       <Routes location={location} key={routeKey}>
         <Route path="/" element={<PageTransition><Home /></PageTransition>} />
         <Route path="/about" element={<PageTransition><About /></PageTransition>} />
-        <Route path="/programs" element={<PageTransition><PlaceholderPage title="Programs" /></PageTransition>} />
-        <Route path="/schedule" element={<PageTransition><PlaceholderPage title="Schedule" /></PageTransition>} />
+        <Route path="/programs" element={<PageTransition><Programs /></PageTransition>} />
+        <Route path="/schedule" element={<PageTransition><Schedule /></PageTransition>} />
         <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
       </Routes>
     </AnimatePresence>
